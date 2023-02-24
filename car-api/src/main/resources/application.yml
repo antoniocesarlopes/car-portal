@@ -1,0 +1,26 @@
+server:
+  port: 8085
+  
+spring:
+  kafka:
+    #producer:
+    bootstrap-servers: ${KAFKA_HOST:localhost:9092}
+  
+#Swagger Configs
+springdoc:
+  pathsToMatch: 
+    - /api/car/**
+  swagger-ui:
+    use-root-path: true
+    tagsSorter: alpha
+  writer-with-order-by-keys: true  
+    
+api:
+  connect-timeout: 300000
+  read-timeout: 300000
+  service:    
+    user-store:   
+      uri: http://localhost:8080/user
+    post-store:
+      uri: http://localhost:8080/sales
+      
