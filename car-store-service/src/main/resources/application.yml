@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  
+# spring Configs        
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/car_post_database?useTimezone=true&serverTimezone=UTC
+    username: postgresql
+    password: postgresql
+    
+    # Jackson Configs
+  jackson:
+    default-property-inclusion: NON_NULL
+
+  jpa:
+    hibernate: 
+        ddl-auto: none
+    properties:
+        hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    show-sql: false
+        
+  kafka:
+    #producer:
+    bootstrap-servers: ${KAFKA_HOST:localhost:9092}
+        
+# Flyway Configs
+flyway:
+  url: jdbc:postgresql://localhost:5432/
+  schemas: car_post_database
+  user: postgresql
+  password: postgresql
+      
