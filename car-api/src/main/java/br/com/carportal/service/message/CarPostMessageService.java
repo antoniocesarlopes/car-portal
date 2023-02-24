@@ -1,12 +1,12 @@
-package br.com.alopes.service.message;
+package br.com.carportal.service.message;
 
 import java.util.logging.Logger;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import br.com.alopes.data.dto.CarPostDTO;
-import br.com.alopes.util.Constantes.TOPICS;
+import br.com.carportal.data.dto.CarPostDTO;
+import br.com.carportal.util.Constantes.TOPICS;
 import lombok.RequiredArgsConstructor;
 
 @Component

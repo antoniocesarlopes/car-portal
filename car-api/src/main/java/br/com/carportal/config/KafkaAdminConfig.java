@@ -1,4 +1,4 @@
-package br.com.alopes.config;
+package br.com.carportal.config;
 
 import java.util.HashMap;
 
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.KafkaAdmin;
 
-import br.com.alopes.util.Constantes.TOPICS;
+import br.com.carportal.util.Constantes.TOPICS;
 import lombok.RequiredArgsConstructor;
 
 @Configuration

@@ -1,4 +1,4 @@
-package br.com.alopes.data.dto;
+package br.com.carportal.data.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

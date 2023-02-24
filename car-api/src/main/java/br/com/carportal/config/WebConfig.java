@@ -1,4 +1,4 @@
-package br.com.alopes.config;
+package br.com.carportal.config;
 
 import java.time.Duration;
 

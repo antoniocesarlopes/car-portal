@@ -1,4 +1,4 @@
-package br.com.alopes.util;
+package br.com.carportal.util;
 
 public interface Constantes {
 

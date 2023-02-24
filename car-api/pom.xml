@@ -5,10 +5,10 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.2</version>
+		<version>3.0.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.alopes</groupId>
+	<groupId>br.com.carportal</groupId>
 	<artifactId>car-api</artifactId>
 	<version>0.0.1</version>
 	<name>car-api</name>

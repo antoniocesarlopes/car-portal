@@ -1,4 +1,4 @@
-package br.com.alopes.controller;
+package br.com.carportal.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.alopes.data.dto.OwnerPostDTO;
-import br.com.alopes.service.OwnerPostService;
+import br.com.carportal.data.dto.OwnerPostDTO;
+import br.com.carportal.service.OwnerPostService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

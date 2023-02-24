@@ -1,4 +1,4 @@
-package br.com.alopes.client;
+package br.com.carportal.client;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.alopes.data.dto.CarPostDTO;
-import br.com.alopes.data.dto.OwnerPostDTO;
+import br.com.carportal.data.dto.CarPostDTO;
+import br.com.carportal.data.dto.OwnerPostDTO;
 import lombok.RequiredArgsConstructor;
 
 @Component

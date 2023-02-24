@@ -1,10 +1,10 @@
-package br.com.alopes.service;
+package br.com.carportal.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.alopes.data.dto.CarPostDTO;
+import br.com.carportal.data.dto.CarPostDTO;
 
 @Service
 public interface CarPostStoreService {

@@ -1,4 +1,4 @@
-package br.com.alopes.controller;
+package br.com.carportal.controller;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.alopes.data.dto.CarPostDTO;
-import br.com.alopes.service.CarPostStoreService;
-import br.com.alopes.service.message.CarPostMessageService;
+import br.com.carportal.data.dto.CarPostDTO;
+import br.com.carportal.service.CarPostStoreService;
+import br.com.carportal.service.message.CarPostMessageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;

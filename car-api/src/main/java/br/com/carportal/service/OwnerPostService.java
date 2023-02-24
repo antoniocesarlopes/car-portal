@@ -1,8 +1,8 @@
-package br.com.alopes.service;
+package br.com.carportal.service;
 
 import org.springframework.stereotype.Service;
 
-import br.com.alopes.data.dto.OwnerPostDTO;
+import br.com.carportal.data.dto.OwnerPostDTO;
 
 @Service
 public interface OwnerPostService {

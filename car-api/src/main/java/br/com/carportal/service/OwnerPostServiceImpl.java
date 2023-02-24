@@ -1,9 +1,9 @@
-package br.com.alopes.service;
+package br.com.carportal.service;
 
 import org.springframework.stereotype.Service;
 
-import br.com.alopes.client.CarPostStoreClient;
-import br.com.alopes.data.dto.OwnerPostDTO;
+import br.com.carportal.client.CarPostStoreClient;
+import br.com.carportal.data.dto.OwnerPostDTO;
 import lombok.RequiredArgsConstructor;
 
 @Service

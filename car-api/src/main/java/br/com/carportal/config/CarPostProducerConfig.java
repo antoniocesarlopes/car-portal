@@ -1,4 +1,4 @@
-package br.com.alopes.config;
+package br.com.carportal.config;
 
 import java.util.HashMap;
 
@@ -12,7 +12,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-import br.com.alopes.data.dto.CarPostDTO;
+import br.com.carportal.data.dto.CarPostDTO;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
