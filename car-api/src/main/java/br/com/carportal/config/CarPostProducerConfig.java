@@ -12,7 +12,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 
-import br.com.carportal.data.dto.CarPostDTO;
+import commons.data.dto.CarPostCreationDTO;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
@@ -22,7 +22,7 @@ public class CarPostProducerConfig {
 	private final KafkaProperties kafkaProperties;
 	
 	@Bean
-	ProducerFactory<String, CarPostDTO> carPostProducerFactory() {
+	ProducerFactory<String, CarPostCreationDTO> carPostProducerFactory() {
 		var configs = new HashMap<String, Object>();
 		configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServers());
 		configs.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
@@ -32,7 +32,7 @@ public class CarPostProducerConfig {
 	}
 	
     @Bean
-    KafkaTemplate<String, CarPostDTO> carPostKafkaTemplate(ProducerFactory<String, CarPostDTO> carPostProducerFactory) {
+    KafkaTemplate<String, CarPostCreationDTO> carPostKafkaTemplate(ProducerFactory<String, CarPostCreationDTO> carPostProducerFactory) {
         return new KafkaTemplate<>(carPostProducerFactory);
     }
 	

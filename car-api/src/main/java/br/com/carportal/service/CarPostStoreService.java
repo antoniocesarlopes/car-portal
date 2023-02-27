@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.carportal.data.dto.CarPostDTO;
+import commons.data.dto.CarPostDTO;
 
 @Service
 public interface CarPostStoreService {

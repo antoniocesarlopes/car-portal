@@ -9,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import br.com.carportal.data.dto.CarPostDTO;
-import br.com.carportal.data.dto.OwnerPostDTO;
+import commons.data.dto.CarPostDTO;
+import commons.data.dto.OwnerPostDTO;
 import lombok.RequiredArgsConstructor;
 
 @Component
@@ -30,16 +30,29 @@ public class CarPostStoreClient {
 		return Arrays.asList(Objects.requireNonNullElse(responseEntity.getBody(), new CarPostDTO[] {}));
 	}
 
-	public void createOwnerPostClient(OwnerPostDTO newUser) {
-		restTemplate.postForEntity(USER_STORE_SERVICE_URI, newUser, OwnerPostDTO.class);
-	}
-
 	public void changeCarForSaleClient(CarPostDTO carPostDTO, String id) {
 		restTemplate.put(POST_STORE_SERVICE_URI + "/car/" + id, carPostDTO, CarPostDTO.class);
 	}
 
 	public void deleteCarForSaleClient(String id) {
 		restTemplate.delete(POST_STORE_SERVICE_URI + "/car/" + id);
+	}
+	
+	public void createOwnerPostClient(OwnerPostDTO newUser) {
+		restTemplate.postForEntity(USER_STORE_SERVICE_URI, newUser, OwnerPostDTO.class);
+	}
+
+	public List<OwnerPostDTO> getAllOwners() {
+		ResponseEntity<OwnerPostDTO[]> responseEntity = restTemplate.getForEntity(USER_STORE_SERVICE_URI, OwnerPostDTO[].class);
+		return Arrays.asList(Objects.requireNonNullElse(responseEntity.getBody(), new OwnerPostDTO[] {}));
+	}
+
+	public void changeOwner(OwnerPostDTO ownerPostDTO, String ownerId) {
+		restTemplate.put(USER_STORE_SERVICE_URI + "/" + ownerId, ownerPostDTO, OwnerPostDTO.class);
+	}
+
+	public void deleteOwner(Long ownerId) {
+		restTemplate.delete(USER_STORE_SERVICE_URI + "/" + ownerId);
 	}
 
 }

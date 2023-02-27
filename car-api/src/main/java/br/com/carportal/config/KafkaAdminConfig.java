@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.KafkaAdmin;
 
-import br.com.carportal.util.Constantes.TOPICS;
+import commons.util.Constantes.TOPICS;
 import lombok.RequiredArgsConstructor;
 
 @Configuration

@@ -1,0 +1,10 @@
+commons\data\dto\CarPostDTO.class
+commons\data\dto\OwnerPostDTO$OwnerPostDTOBuilder.class
+commons\util\Constantes$GROUP_ID.class
+commons\data\dto\CarPostCreationDTO.class
+commons\data\dto\CarPostDTO$CarPostDTOBuilder.class
+commons\util\Constantes.class
+commons\data\entity\TypeOwner.class
+commons\util\Constantes$TOPICS.class
+commons\data\dto\CarPostCreationDTO$CarPostCreationDTOBuilder.class
+commons\data\dto\OwnerPostDTO.class

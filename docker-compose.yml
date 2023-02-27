@@ -41,6 +41,7 @@ services:
       
   db:
     image: postgres:latest
+    container_name: local_pgdb
     restart: always
     networks:
       - broker-kafka
@@ -51,6 +52,22 @@ services:
       - '5432:5432'
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    networks:
+      - broker-kafka 
+    depends_on:
+      - db      
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: alopes.java@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin      
 
 networks:
   broker-kafka:

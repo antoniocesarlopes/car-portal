@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.carportal.data.dto.CarPostDTO;
 import br.com.carportal.service.CarPostStoreService;
-import br.com.carportal.service.message.CarPostMessageService;
+import br.com.carportal.service.message.CarPostMessageProducer;
+import commons.data.dto.CarPostCreationDTO;
+import commons.data.dto.CarPostDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -30,12 +31,12 @@ public class CarPostController {
 
 	private final CarPostStoreService carPostStoreService;
 	
-	private final CarPostMessageService carPostMessage;
+	private final CarPostMessageProducer carPostMessage;
 	
 	@GetMapping(value = "/posts",
 			produces = { MediaType.APPLICATION_JSON_VALUE })
-	@Operation(summary = "Carros a venda", description = "Recupera todos os carros a venda",
-	tags = {"Postagem"},
+	@Operation(summary = "Lista os Carros a venda", description = "Recupera todos os carros a venda",
+	tags = {"Carros"},
 	responses = {
 			@ApiResponse(description = "Success", responseCode = "200",
 					content = {
@@ -56,7 +57,7 @@ public class CarPostController {
 	@PostMapping("/posts")
 	@Operation(summary = "Adiciona um carro a venda",
 	description = "Recebe um carro para venda e envia para fila de mensagens",
-	tags = {"Postagem"},
+	tags = {"Carros"},
 	responses = {
 			@ApiResponse(description = "No Content", responseCode = "204", content = @Content),
 			@ApiResponse(description = "Bad Request", responseCode = "400", content = @Content),
@@ -64,7 +65,7 @@ public class CarPostController {
 			@ApiResponse(description = "Internal Error", responseCode = "500", content = @Content),
 	}
 			)
-	public ResponseEntity<?> postCarForSale(@RequestBody CarPostDTO carPostDTO) {
+	public ResponseEntity<?> postCarForSale(@RequestBody CarPostCreationDTO carPostDTO) {
 		carPostMessage.sendMessage(carPostDTO);
 		return ResponseEntity.ok().build();
 	}
@@ -72,7 +73,7 @@ public class CarPostController {
 	@PutMapping(value = "/{id}")
 	@Operation(summary = "Atualiza um carro a venda",
 	description = "Atualiza uma postagem de carro a venda através do seu identificador único",
-	tags = {"Postagem"},
+	tags = {"Carros"},
 	responses = {
 			@ApiResponse(description = "No Content", responseCode = "204", content = @Content),
 			@ApiResponse(description = "Bad Request", responseCode = "400", content = @Content),
@@ -88,7 +89,7 @@ public class CarPostController {
 	@DeleteMapping(value = "/{id}")
 	@Operation(summary = "Remove um carro a venda",
 	description = "Remove uma postagem de carro a venda através do seu identificador único",
-	tags = {"Postagem"},
+	tags = {"Carros"},
 	responses = {
 			@ApiResponse(description = "No Content", responseCode = "204", content = @Content),
 			@ApiResponse(description = "Bad Request", responseCode = "400", content = @Content),
