@@ -1,0 +1,44 @@
+server:
+  port: 8088
+  
+# spring Configs        
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/analitycs_post_database?useTimezone=true&serverTimezone=UTC
+    username: postgres
+    password: postgres
+    
+    # Jackson Configs
+  jackson:
+    default-property-inclusion: NON_NULL
+
+  jpa:
+    hibernate: 
+        ddl-auto: validate
+    properties:
+        hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    show-sql: true
+        
+  kafka:
+    #consumer:
+    bootstrap-servers: ${KAFKA_HOST:localhost:9092}
+        
+# Flyway Configs
+flyway:
+  url: jdbc:postgresql://localhost:5432/
+  schemas: analitycs_post_database
+  user: postgres
+  password: postgres
+  
+#Swagger Configs
+springdoc:
+  pathsToMatch: 
+    - /**
+  swagger-ui:
+    use-root-path: true
+    tagsSorter: alpha
+  writer-with-order-by-keys: true   
+      

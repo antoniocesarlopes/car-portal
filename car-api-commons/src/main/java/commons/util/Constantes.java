@@ -7,6 +7,7 @@ public interface Constantes {
 	}
 	interface GROUP_ID {
 		String STORE_POST = "store-posts-group";
+		String ANALYTICS_POST = "analytics-posts-group";
 	}
 
 }
