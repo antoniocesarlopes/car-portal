@@ -24,3 +24,4 @@ hs_err_pid*
 
 #postgress config folders
 postgres-data/
+pgadmin-data/
